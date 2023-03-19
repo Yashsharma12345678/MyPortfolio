@@ -1,0 +1,22 @@
+
+.scene{
+    width:100vw;
+    height:100vh;
+}
+
+.canvas{
+    background: #0C0E10;
+}
+
+/* .font{
+    font-family: 'Alex Brush';
+} */
+
+.font {
+    font-family: 'Pacifico';
+    src: url('../public/Pacifico-Regular.ttf');
+    /* src: url('../asset/OpenSans/OpenSans-Medium.ttf'); */
+    font-weight: 400;
+    /* font-style: normal; */
+    }
+

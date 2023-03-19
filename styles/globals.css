@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    
+        .btn{ 
+            @apply py-3 px-3 sm:px-7 m-4 text-lg text-blue-700 border  border-gray-500 bg-[#0C0E10] rounded-md cursor-pointer transition transform duration-200 ease-out hover:bg-gray-900
+        }
+        .drawer{
+            @apply w-7 h-6 text-center rounded-md hover:border border-blue-900 hover:bg-[#1f2122] text-white
+        }
+        .logo{
+            @apply w-8 m-2 pt-2 pb-1 px-1  hover:border border-blue-900 hover:bg-[#1f2122]  transition transform duration-200 ease-out
+        }
+        .text{
+            @apply hover:text-[#000000] transform transition-transform hover:animate-ping
+        }
+        .input{ 
+            @apply py-3  placeholder:text-gray-500 outline-none px-3 sm:px-7 mt-14 sm:m-2 text-lg text-white w-full border  border-gray-500 bg-[#0C0E10] rounded-md transition transform duration-200 ease-out hover:bg-gray-900
+        }
+
+        .htmltext{
+            @apply text-gray-600 font-sans text-sm
+        }
+}
