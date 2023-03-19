@@ -22,7 +22,7 @@ function HomePage() {
       <div className="">
         <h1 className="text-gray-400 text-4xl sm:text-6xl md:text-6xl lg:text-6xl tracking-tight font-extrabold">
           <span className="text">H</span><span className="text">e</span><span className="text">y</span><span className="wave cursor-pointer">👋 </span>{" "}
-         <span className="text">I'</span><span className="text">m</span><span className="text"> Y</span><span className="text">a</span><span className="text">s</span><span className="text">h</span><span className="text"> S</span><span className="text">h</span><span className="text">a</span><span className="text">r</span><span className="text">m</span><span className="text">a</span><br className="hidden sm:block" />
+         <span className="text">I</span><span className="text">m</span><span className="text"> Y</span><span className="text">a</span><span className="text">s</span><span className="text">h</span><span className="text"> S</span><span className="text">h</span><span className="text">a</span><span className="text">r</span><span className="text">m</span><span className="text">a</span><br className="hidden sm:block" />
         </h1>
       </div>
       <div className="text-xl md:text-3xl pt-5 ">

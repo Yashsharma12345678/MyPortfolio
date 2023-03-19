@@ -75,7 +75,7 @@ function Modal() {
               </div>
               <div className="border-t-2 border-gray-700">
                 <div className="flex cursor-pointer text-white space-x-5 pl-5 p-1 mt-3 pb-2 hover:bg-gray-900 transition duration-500 transform ease-out">
-                  <Image src="/twitter.png" height={25} width={25} />
+                  <Image src="/twitter.png" height={25} width={25} alt="image" />
                   <p>Twitter</p>
                 </div>
                 <Link
@@ -83,7 +83,7 @@ function Modal() {
                   target="_blank"
                 >
                   <div className="flex cursor-pointer text-white space-x-5 pl-5 p-1 mt-3 pb-2 hover:bg-gray-900 transition duration-500 transform ease-out">
-                    <Image src="/linkedin.png" height={25} width={25} />
+                    <Image src="/linkedin.png" height={25} width={25} alt="image" />
                     <p>Linkedin</p>
                   </div>
                 </Link>
@@ -97,6 +97,7 @@ function Modal() {
                       src="/github1.png"
                       height={25}
                       width={25}
+                      alt="image"
                     />
                     <p>Github</p>
                   </div>
