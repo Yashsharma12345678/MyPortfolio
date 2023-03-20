@@ -4,7 +4,7 @@ import TagCloud from 'TagCloud'
 function TextSphere() {
     useEffect(()=>{
         return () => {
-            const container = ".tagcloud";
+            const container = document.getElementById("tagcloud");
 
             const texts = [
                 "HTML",
@@ -47,7 +47,7 @@ function TextSphere() {
 return (
     <>
     <div className='text-sphere'>
-        <div className='tagcloud'>
+        <div id='tagcloud'>
         </div>
     </div>
     </>
