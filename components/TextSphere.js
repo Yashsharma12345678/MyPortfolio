@@ -2,9 +2,10 @@ import React,{useEffect} from 'react'
 import TagCloud from 'TagCloud'
 
 function TextSphere() {
+
     useEffect(()=>{
         return () => {
-            const container = document.getElementById("tagcloud");
+            const container = ".tagcloud";
 
             const texts = [
                 "HTML",
@@ -47,7 +48,7 @@ function TextSphere() {
 return (
     <>
     <div className='text-sphere'>
-        <div id='tagcloud'>
+        <div className='tagcloud'>
         </div>
     </div>
     </>
