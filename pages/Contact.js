@@ -137,7 +137,7 @@ function Contact() {
         <div className=" col-span-1   "></div>
 
         <div className="col-span-4 border h-screen hidden sm:block">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d112015.36851403785!2d77.1588096!3d28.675276800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1679332984854!5m2!1sen!2sin"  className="w-full h-full" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d112015.36851403785!2d77.1588096!3d28.675276800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1679332984854!5m2!1sen!2sin"  className="w-full h-full" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
