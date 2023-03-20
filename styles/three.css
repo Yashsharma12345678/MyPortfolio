@@ -8,6 +8,15 @@
     background: #0C0E10;
 }
 
+.google-map{
+    width: 100%;
+}
+
+.google-map-iframe{
+    margin-top: 50px;
+    height: 60;
+}
+
 /* .font{
     font-family: 'Alex Brush';
 } */

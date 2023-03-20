@@ -8,7 +8,7 @@ import TextSphere from "@/components/TextSphere";
 function About() {
   // const gltf = useLoader(GLTFLoader, '/Donkey.gltf')
   return (
-    <div className=" grid grid-cols-2  text-white bg-[#0C0E10]">
+    <div className=" grid grid-cols-2  text-white ">
       <div className=" col-span-1">
         <div>
           <Canvas
@@ -19,7 +19,7 @@ function About() {
             }}
           >
             <ambientLight color={"white"} intensity={0.6} />
-            {/* <LightBulb position={[0, 3, 0]} /> */}
+            {/* <LightBulb osition={[0, 3, 0]} /> */}
             {/* <Draggable> */}
             <Box position={[10, 15, 0]} args={[50, 3, 50]} />
 

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
     {/* <Maps/> */}
-      <div className="relative ">
+      <div className="relative  ">
       <HomePage />
       <Modal/>
       </div>

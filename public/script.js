@@ -14,16 +14,17 @@ var maxradius = 30;
 var minradius = 2; 
 
 var colorarray = [
-    '#ffaa33',
+    // '#ffaa33',
     '#99ffaa',
-    '#00ff00',
-    '#4411aa',
-    '#ff1100',
+    // '#00ff00',
+    // '#4411aa',
+    // '#ff1100',
     '#028fba',
     '#043F88',
+    '#1885a6',
     'blue',
-    'red',
-    'purple',
+    // 'red',
+    // 'purple',
     'white',
 
 ];
@@ -90,11 +91,11 @@ class Circle {
 
 var circlearray = [];
 
-for( var i = 0; i < 80 ; i++){
+for( var i = 0; i < 50 ; i++){
     var x = Math.random() * (innerWidth);
     var y = Math.random() * (innerHeight);
-    var dx = (Math.random()   );
-    var dy = (Math.random() );
+    var dx = (Math.random()*0.8  );
+    var dy = (Math.random()*0.8 );
     var radius = Math.random() * 6 +1;
     circlearray.push(new Circle (x,y,radius,dx,dy))
 
