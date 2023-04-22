@@ -36,18 +36,13 @@ function HomePage() {
           <CodeBracketIcon className="w-5 mr-2" />
           <button>Projects</button>
         </div></Link>
-        <div className="hidden sm:block">
+        <div className="">
         <Link href="/About"><div className="btn flex">
           <ClockIcon className="w-5 mr-2" />
           <button>About</button>
         </div></Link>
         </div>
-        <div className="block sm:hidden">
-        <Link href="/About_phone"><div className="btn flex">
-          <ClockIcon className="w-5 mr-2" />
-          <button>About</button>
-        </div></Link>
-        </div>
+        
 
         <Link href="/Contact">
         <div className="btn flex">
