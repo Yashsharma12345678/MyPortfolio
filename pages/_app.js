@@ -7,10 +7,13 @@ import Script from "next/script";
 import { RecoilRoot } from "recoil";
 import TextSphere from "@/components/TextSphere";
 import Maps from "@/components/Maps";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
+  
   return (
     <>
+    
 
       <RecoilRoot>
       <div className="">

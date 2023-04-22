@@ -1,18 +1,18 @@
 
 import HomePage from "@/components/HomePage";
 import Modal from "@/components/Modal";
+import Head from "next/head";
 
 
 export default function Home() {
-  // const {isLoaded} = useLoadScript({
-  //   googleMapsApiKey: "AIzaSyDPh73hAo05erjtXlS_AgJgcRsFspo_dZU",
-  // })
-
-  // if(!isLoaded) return <div>Loading...</div>
-
 
   return (
+
     <>
+    <Head>
+      <title>portfolio</title>
+      <link rel="shortcut icon" href="/favicon3.png" />
+    </Head>
     {/* <Maps/> */}
       <div className="relative  ">
       <HomePage />

@@ -1,69 +1,83 @@
 import React from "react";
-import { Canvas } from "@react-three/fiber";
-import Box from "@/components/Box";
-import Controls from "@/components/OrbitControls";
-import TextSphere from "@/components/TextSphere";
+import Link from "next/link";
+import Image from "next/image";
+import { CameraIcon} from "@heroicons/react/24/solid"
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 function About() {
   // const gltf = useLoader(GLTFLoader, '/Donkey.gltf')
   return (
-    <div className=" grid grid-cols-2  text-white ">
-      <div className=" col-span-1">
-        <div>
-          <Canvas
-            shadows
-            // className="canvas"
-            camera={{
-              position: [0, 50, 20],
-            }}
-          >
-            <ambientLight color={"white"} intensity={0.6} />
-            {/* <LightBulb osition={[0, 3, 0]} /> */}
-            {/* <Draggable> */}
-            <Box position={[10, 15, 0]} args={[50, 3, 50]} />
+    <div className="flex justify-between items-center  text-white">
+      <div></div>
+      <div className=" w-1/3 h-screen flex flex-col justify-center">
+        <h3 className="text-gray-400 text-2xl sm:text-5xl font-bold">Hello, It's Me</h3>
+        {/* <h1 className="text-white text-7xl font-bold mt-2"></h1> */}
+        <h1 className="text-gray-400 text-4xl sm:text-5xl md:text-6xl lg:text-6xl tracking-tight font-extrabold">
+         <span className="text"> Y</span><span className="text">a</span><span className="text">s</span><span className="text">h</span><span className="text"> S</span><span className="text">h</span><span className="text">a</span><span className="text">r</span><span className="text">m</span><span className="text">a</span><br className="hidden sm:block" />
+        </h1>
+        {/* <h3>And I'm a Fullstack Developer</h3> */}
+        <h1 className="h1words mt-4">
+          <span className="spanwords ">And I am a </span>
+          <div class="message">
+            <div class="word1">WEB Developer</div>
+            <div class="word2">App Developer</div>
+            <div class="word3">Os Developer</div>
+          </div>
+        </h1>
 
-            {/* </Draggable> */}
-            {/* <Model/> */}
-            <Controls />
-            {/* <Floor position={[0, -4, 0]}  /> */}
-          </Canvas>
-        </div>
-        <div>
-          <div className=" absolute top-64 left-14 sm:left-28 md:left-44 border border-r-blue-400 border-l-blue-400 border-t-blue-900 rounded-lg  border-b-blue-900 border-gray-800 w-1/2 md:w-1/3 h-1/2 lg:w-1/3  hover:scale-125 transition transform duration-150 ease-out">
-            <h1 className=" text-blue-200 text-3xl text-center border-b-[0.2px] border-gray-900 p-3 font-bold ">
-              About Me
-            </h1>
-            <div className="">
-              <h3 className="text-gray-600 mt-8 text-lg mx-3 h-full ">
-                I am 20 year old software developer. I have a serious passion
-                for ui effects, animations, creative intuitive dynamic user
-                experience . Well organished person, problem solver with high
-                attention to detail
-              </h3>
+        <p className="text-xl mt-4 text-[#028fba] hidden md:block">
+        I am a Web/App developer. I have a serious passion for UI effects,Animations and Creative inituitive.
+        Well-Organised person,Problem solver,independent employee with high attention to detail.
+        Interested in the entire frontend spectrum and working on ambitious projects with positive mindset.
+        </p>
+        {/* icons */}
+        <div className="flex space-x-10 mt-4">
+          <div>
+            <Link
+              href="https://www.linkedin.com/in/yashsharma2723/"
+              target="_blank"
+            >
+              <div className="aboutLogos">
+                <Image src="/linkedin.png" height={32} width={32} alt="image" />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href="https://github.com/settings/profile" target="_blank">
+              <div className="aboutLogos">
+                <Image
+                  className="bg-white"
+                  src="/github1.png"
+                  height={32}
+                  width={32}
+                  alt="image"
+                />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <div className="aboutLogos">
+              <Image src="/twitter.png" height={32} width={32} alt="image" />
             </div>
           </div>
+          <div>
+              <div className="aboutLogos">
+                <CameraIcon className="h-8 w-8 text-white"/>
+              </div>
+          </div>
+        </div>
+        <Link href="/yashResume.pdf" target="_blank">
+        <div>
+          <button className="aboutbtn">Download CV</button>
+        </div>
+        </Link>
+        {/* cv download button */}
+      </div>
+      <div className="w-1/2 flex items-center justify-center">
+        <div className="border-[5px] absolute border-[#028fba] p-5 bg-[#028fba] rounded-md">
+        <img className="h-60 w-60  " src="/profilepic.jpeg" alt="" />
         </div>
       </div>
-      <div className="hidden lg:block">
-        <div className=" mt-20 col-span-1 text-[#08FDD8]">
-          <TextSphere />
-        </div>
-      </div>
-
-      {/* <div>
-      <div className='absolute top-64 left-12 sm:left-28 md:left-44 border border-r-blue-400 border-l-blue-400 border-t-blue-900 rounded-lg  border-b-blue-900 border-gray-800 w-1/2 md:w-1/3 h-1/2 lg:w-1/3  hover:scale-125 transition transform duration-150 ease-out'>
-      <h1 className=' text-blue-200 text-3xl text-center border-b-[0.2px] border-gray-900 p-3 font-bold '>About Me</h1>
-      <div className=''>
-      <h3 className='text-gray-600 mt-8 text-lg mx-3 h-full '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe rem unde nisi dolorum reiciendis ratione perspiciatis dolorem nihil possimus blanditiis magnam totam, quis quod quae alias iusto suscipit eligendi nemo!</h3>
-      </div>
-      </div>
-      </div>
-
-      <div className=' text-[#08FDD8]'>
-      
-      <TextSphere/>
-    </div> */}
     </div>
   );
 }

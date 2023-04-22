@@ -23,4 +23,10 @@
         .htmltext{
             @apply text-gray-600 font-sans text-sm
         }
+        .aboutLogos{
+            @apply flex cursor-pointer text-white space-x-5 pl-2 pr-2 mt-3 pb-2 pt-1 border border-[#028fba] rounded-xl hover:bg-[#028fba] transition duration-500 transform ease-out
+        }
+        .aboutbtn{ 
+            @apply py-3 px-3 sm:px-7 mt-6 text-lg text-[white] border  border-white  rounded-md cursor-pointer transition transform duration-200 ease-out hover:bg-[#028fba] hover:text-white
+        }
 }
