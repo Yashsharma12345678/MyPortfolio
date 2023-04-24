@@ -88,8 +88,7 @@ function About() {
         {/* cv download button */}
       </div>
       <div className="w-1/2 flex items-center justify-center">
-        <div className="border-[5px] absolute border-[#028fba] p-5 bg-[#028fba] rounded-md">
-          {/* <img className="h-60 w-60  " src="/profilepic.jpeg" alt="" /> */}
+        <div className="border-[5px] top-10 right--20 absolute border-[#028fba] p-5 bg-[#028fba] rounded-md">
           <Image
             src="/profilepic.jpeg"
             width={200}

@@ -42,7 +42,6 @@ function HomePage() {
           <button>About</button>
         </div></Link>
         </div>
-        
 
         <Link href="/Contact">
         <div className="btn flex">
