@@ -7,9 +7,8 @@ function Projects() {
 
     <div className="h-screen  overflow-y-auto py-32 scrollbar-hide">
     <div className="flex flex-col items-center justify-center">
-    {/* <Contacts/>  */}
       <Card title="Gamehub" desc="this is a gaming site in which we can play various games together" link="https://gamebits.vercel.app/" />
-      <Card title="YashCart" desc="This is basically a ecommerce site 🙂" link="https://gamebits.vercel.app/"  />
+      <Card title="YashCart" desc="This is basically a ecommerce site" link="https://gamebits.vercel.app/"  />
       <Card title="Jarvis" desc="This is a openAi project " link="https://chatwithjarvy.vercel.app/"  />
       <Card title="InstaClone" desc="This is a social-media platform where we meet many friends" link="https://gamebits.vercel.app/" />
       <Card title="PhotoGallery" desc="This is the only platform where you can get any picture by just writing its name" link="https://phomtogallery.vercel.app/" />

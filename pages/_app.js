@@ -8,29 +8,20 @@ import { RecoilRoot } from "recoil";
 import TextSphere from "@/components/TextSphere";
 import Maps from "@/components/Maps";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }) {
-  
   return (
     <>
-    
-
       <RecoilRoot>
-      <div className="">
-        {/* hello */} 
-        <canvas className=" canva absolute top-0 left-0 bg-[#0C0E10]  overflow-y-scroll scrollbar-hide"></canvas>
-      {/* <HomePage/> */}
-      <div className="relative">
-      {/* <TextSphere/> */}
-      
-      {/* <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></Script>
-<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></Script>
-      <Maps/> */}
-      <Component {...pageProps} />
-      </div>
-      <Script type="module" src="/script.js"></Script> 
-      </div>
-      
+        <div className="">
+          <canvas className=" canva absolute top-0 left-0 bg-[#0C0E10] overflow-y-scroll scrollbar-hide"></canvas>
+          <div className="relative">
+            <Component {...pageProps} />
+            <Toaster/>
+          </div>
+          <Script type="module" src="/script.js"></Script>
+        </div>
       </RecoilRoot>
     </>
   );

@@ -21,7 +21,7 @@ function About_phone() {
         <ambientLight color={"white"} intensity={0.6} />
         {/* <LightBulb position={[0, 3, 0]} /> */}
         {/* <Draggable> */}
-        <Box position={[-10, 15, 0]} args={[10, 3, 10]} />
+        {/* <Box position={[-10, 15, 0]} args={[10, 3, 10]} /> */}
 
         {/* </Draggable> */}
         {/* <Model/> */}
@@ -41,7 +41,6 @@ function About_phone() {
             I am 20 year old software developer. I have a serious passion for ui
             effects, animations, creative intuitive dynamic user experience
           </h3>
-        
         </div>
       </div>
     </div>

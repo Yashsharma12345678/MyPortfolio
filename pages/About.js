@@ -3,9 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { CameraIcon } from "@heroicons/react/24/solid";
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import {FiTwitter} from "react-icons/fi"
+import {TiSocialLinkedin} from "react-icons/ti"
+import {VscGithubInverted} from "react-icons/vsc"
 
 function About() {
   // const gltf = useLoader(GLTFLoader, '/Donkey.gltf')
+
+  
   return (
     <div className="flex justify-between items-center  text-white">
       <div></div>
@@ -52,26 +57,21 @@ function About() {
               target="_blank"
             >
               <div className="aboutLogos">
-                <Image src="/linkedin.png" height={32} width={32} alt="image" />
+                <TiSocialLinkedin className="w-8 h-8"/>
+                {/* <Image src="/linkedin.png" height={32} width={32} alt="image" /> */}
               </div>
             </Link>
           </div>
           <div>
             <Link href="https://github.com/settings/profile" target="_blank">
               <div className="aboutLogos">
-                <Image
-                  className="bg-white"
-                  src="/github1.png"
-                  height={32}
-                  width={32}
-                  alt="image"
-                />
+                <VscGithubInverted className="w-8 h-8"/>
               </div>
             </Link>
           </div>
           <div>
             <div className="aboutLogos">
-              <Image src="/twitter.png" height={32} width={32} alt="image" />
+              <FiTwitter className="w-8 h-8 "/>
             </div>
           </div>
           <div>
@@ -85,10 +85,9 @@ function About() {
             <button className="aboutbtn">Download CV</button>
           </div>
         </Link>
-        {/* cv download button */}
       </div>
-      <div className="w-1/2 flex items-center justify-center">
-        <div className="border-[5px] top-10 right--20 absolute border-[#028fba] p-5 bg-[#028fba] rounded-md">
+      <div className = "w-1/2 flex items-center justify-center">
+        <div className = "border-[5px] top-10 right--20 absolute border-[#028fba] p-5 bg-[#028fba] rounded-md">
           <Image
             src="/profilepic.jpeg"
             width={200}
