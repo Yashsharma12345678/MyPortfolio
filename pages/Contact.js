@@ -7,14 +7,13 @@ import {
   orderBy,
   query,
   serverTimestamp,
-  setDoc
+  setDoc,
 } from "firebase/firestore";
+import { ImCross } from "react-icons/im";
 import React, { useEffect, useRef, useState } from "react";
 import { db } from "../firebase";
 import { toast } from "react-hot-toast";
 var profanity = require("profanity-hindi");
-
-
 
 function Contact() {
   const [name, setname] = useState("");
@@ -23,24 +22,26 @@ function Contact() {
   const [message, setmessage] = useState("");
   const [internetstate, setinternetstate] = useState("");
   const [formData, setFormData] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isModalOpen, setisModalOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window != "undefined") {
-      window.navigator.onLine ? setinternetstate("on") : setinternetstate("off")
+      window.navigator.onLine
+        ? setinternetstate("on")
+        : setinternetstate("off");
     }
-  }, [internetstate])
+  }, [internetstate]);
 
   useEffect(
     () =>
       onSnapshot(
-        query(collection(db, "UserData"),
-          orderBy("timestamp")),
-        snapshot => {
+        query(collection(db, "UserData"), orderBy("timestamp")),
+        (snapshot) => {
           setFormData(snapshot.docs);
-          
         }
-      ), [db]
+      ),
+    [db]
   );
 
   const sendData = async (e) => {
@@ -53,44 +54,45 @@ function Contact() {
     setsubject("");
     const messagetosend = message;
     setmessage("");
-    const notification = toast.loading('Your message has been uploading')
+    const notification = toast.loading("Your message has been uploading");
 
-    if (nametosend != '' && email != '' && subject != '' && message != '') {
-      if (!profanity.isMessageDirty(nametosend) && !profanity.isMessageDirty(email) && !profanity.isMessageDirty(message) && !profanity.isMessageDirty(subject)) {
+    if (nametosend != "" && email != "" && subject != "" && message != "") {
+      if (
+        !profanity.isMessageDirty(nametosend) &&
+        !profanity.isMessageDirty(email) &&
+        !profanity.isMessageDirty(message) &&
+        !profanity.isMessageDirty(subject)
+      ) {
         await addDoc(collection(db, "UserData"), {
           name: nametosend,
           email: emailtosend,
           subject: subjecttosend,
           message: messagetosend,
-          timestamp: serverTimestamp()
+          timestamp: serverTimestamp(),
         });
-        
-        
 
-        toast.success('Successfully Uploaded ,Thankyou for connecting...', {
-          id: notification
-        })
-        setLoading(false)
-      }
-      else {
+        toast.success("Successfully Uploaded ,Thankyou for connecting...", {
+          id: notification,
+        });
+        setLoading(false);
+      } else {
         toast.error("Please don't use abuse words...", {
-          id: notification
-        })
+          id: notification,
+        });
       }
-    }
-    else {
-      toast.error('Must filled all fields...', {
-        id: notification
-      })
+    } else {
+      toast.error("Must filled all fields...", {
+        id: notification,
+      });
     }
   };
 
   return (
     <div>
       <div className="  grid grid-cols-9 text-white">
-        <div className=" col-span-1  "></div>
-        {internetstate == "off" ?
-          (<div className=" col-span-9 sm:col-span-3 ">
+        <div className=" col-span-1 "></div>
+        {internetstate == "off" ? (
+          <div className=" col-span-9 sm:col-span-3 ">
             <h1 className="htmltext select-none font hidden sm:block">
               {"</"}html{">"}
             </h1>
@@ -121,8 +123,8 @@ function Contact() {
             </h1>
 
             <p className="mx-0 sm:mx-6 mt-4 sm:mt-0 text-gray-300 text-md  sm:text-md">
-              I’m interested in freelance opportunities – especially ambitious or
-              large projects. However, if you have other request or question,
+              I’m interested in freelance opportunities – especially ambitious
+              or large projects. However, if you have other request or question,
               don’t hesitate to use the form
             </p>
             <h1 className="htmltext select-none font hidden sm:block mx-4">
@@ -132,7 +134,11 @@ function Contact() {
               {"<"}form{">"}
             </h1>
 
-            <form action="" className="flex flex-col space-y-4 " id="contactForm">
+            <form
+              action=""
+              className="flex flex-col space-y-4 "
+              id="contactForm"
+            >
               <div className="flex  space-x-2">
                 <input
                   type="text"
@@ -191,9 +197,9 @@ function Contact() {
             <h1 className="htmltext select-none font hidden sm:block ">
               {"<"}html{"/>"}
             </h1>
-
-          </div>) :
-          (<div className=" col-span-6 sm:col-span-3 ">
+          </div>
+        ) : (
+          <div className="  col-span-6">
             <h1 className="htmltext select-none font hidden sm:block">
               {"</"}html{">"}
             </h1>
@@ -224,8 +230,8 @@ function Contact() {
             </h1>
 
             <p className="mx-0 sm:mx-6 mt-4 sm:mt-0 text-gray-300 text-md  sm:text-md">
-              I’m interested in freelance opportunities – especially ambitious on
-              large projects. However, if you have other request or question,
+              I’m interested in freelance opportunities – especially ambitious
+              on large projects. However, if you have other request or question,
               don’t hesitate to use the form
             </p>
             <h1 className="htmltext select-none font hidden sm:block mx-4">
@@ -235,25 +241,27 @@ function Contact() {
               {"<"}form{">"}
             </h1>
 
-            <form action="" className="flex flex-col space-y-4 " id="contactForm">
-              <div className="flex  space-x-2">
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setname(e.target.value)}
-                  placeholder="Name"
-                  className="input max-w-full "
-                />
-                <input
-                  type="text"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setemail(e.target.value)}
-                  placeholder="Email"
-                  className="input "
-                />
-              </div>
+            <form
+              action=""
+              className="flex flex-col space-y-4 "
+              id="contactForm"
+            >
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setname(e.target.value)}
+                placeholder="Name"
+                className="input max-w-full "
+              />
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
+                placeholder="Email"
+                className="input "
+              />
               <input
                 type="text"
                 placeholder="Subject"
@@ -264,19 +272,29 @@ function Contact() {
               />
               <textarea
                 cols="10"
-                rows="6"
+                rows="4"
                 id="textarea"
                 value={message}
                 onChange={(e) => setmessage(e.target.value)}
                 className="input"
                 placeholder="Message"
               ></textarea>
-              <div className=" py-2 flex justify-between">
-                <div className="text-[#0C0E10]">hello</div>
+              <div className=" py-2 flex items-end space-x-9 justify-end w-full">
+                {/* <div className="text-[#0C0E10]">hello</div> */}
+                <div
+                  onClick={() => {
+                    setisModalOpen(!isModalOpen);
+                  }}
+                  // onClick={sendData}
+                  // type="submit"
+                  className="border py-2 sm:py-4 px-2  mr-2 hover:bg-[#08FDD8] hover:rounded-lg hover:scale-125 transition transform duration-600 ease-in-out hover:text-white border-[#08FDD8] text-[#08FDD8]"
+                >
+                  Prev Suggestions
+                </div>
                 <button
                   onClick={sendData}
                   type="submit"
-                  className="border py-2 sm:py-4 px-2  mr-2 hover:bg-[#08FDD8] hover:rounded-lg hover:scale-125 transition transform duration-200 ease-out hover:text-white border-[#08FDD8] text-[#08FDD8]"
+                  className="border py-2 sm:py-4 px-2  mr-2 hover:bg-[#08FDD8] hover:rounded-lg hover:scale-125 transition transform duration-600 ease-in-out hover:text-white border-[#08FDD8] text-[#08FDD8]"
                 >
                   Send Messages
                 </button>
@@ -291,12 +309,53 @@ function Contact() {
             <h1 className="htmltext select-none font hidden sm:block ">
               {"<"}html{"/>"}
             </h1>
+          </div>
+        )}
 
-          </div>)}
-        <div className=" col-span-1   "></div>
+        {isModalOpen && (
+          <div
+            style={{
+              boxShadow: "0 7px 20px 0 rgb(90,90,90)",
+            }}
+            // ref={modalRef}
+            className="fixed top-[12%] py-3 left-[9%] h-[80%] shadow-md shadow-slate-400 z-50 rounded-[10px] w-[80%] flex-col space-y-2 items-center justify-start bg-[#0C0E10]"
+          >
+            <div className=" flex items-center justify-center">
+            <h1 className="text-4xl text-center font-semibold mt-5 text-gray-200 animate-pulse ">
+              Previous Suggestions{" "}
+            </h1>
+            <ImCross
+              className=" absolute right-10"
+              onClick={() => setisModalOpen(!isModalOpen)}
+            />
+            </div>
+            <div className="mt-24 flex flex-col  mb-24">
+              {formData.map((item) => {
+                return (
+                  <>
+                    <div className="p-2 w-full ">
+                      <div className=" flex items-center border-gray-200 border p-4 rounded-lg">
+                        <div className="flex-grow">
+                          <h2 className=" title-font font-medium text-lg text-blue-300">
+                            {item.data().email}
+                          </h2>
+                          <div className="flex justify-between  ">
+                            <p className=" text-red-300 text-md ">
+                              {item.data().message}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {/* <div className=" col-span-1   "></div> */}
 
-
-        {<div className="col-span-4 pl-4 hidden md:flex md:flex-col h-screen overflow-y-auto border-l-[10px] border-gray-900 ">
+        {/* {<div className="col-span-4 pl-4 hidden md:flex md:flex-col h-screen overflow-y-auto border-l-[10px] border-gray-900 ">
           <h1 className="text-4xl text-center font-semibold mt-5 text-gray-200 animate-pulse ">Previous Suggestions </h1>
           <div className="mt-24 flex flex-col  mb-24">
             {formData.map((item) => {
@@ -308,9 +367,7 @@ function Contact() {
                       <h2 className=" title-font font-medium text-lg text-blue-300">{item.data().email}</h2>
                       <div className="flex justify-between  ">
                       <p className=" text-red-300 text-md ">{item.data().message }</p>
-                        {/* {
-                        loading && <h1 className="font-bold">{new Date(item.data().timestamp.seconds*1000).toLocaleString()}</h1>
-                        } */}
+                        
                       </div>
                     </div>
                   </div>
@@ -319,7 +376,7 @@ function Contact() {
               )
             })}
           </div> 
-        </div>}
+        </div>} */}
       </div>
     </div>
   );
